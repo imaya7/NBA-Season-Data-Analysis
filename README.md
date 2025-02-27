@@ -1,7 +1,7 @@
 # NBA-Season-Data-Analysis
 Exploring Scipy for NBA Analysis
 
-#Project Overview 
+# Project Overview 
 This project analyzes NBA player statistics, focusing on three-point accuracy across multiple seasons. It utilizes data from the players_stats_by_season_full_details.csv file, and performs various analyses such as determining the player with the most regular seasons, calculating three-point accuracy for each season, performing linear regression, and more. The results are printed either to a file or displayed in the terminal, based on user preference. Important: Please note that if you choose to print to a file, the code will not finish running until you close the linear regression graph.
 
 # Design 
