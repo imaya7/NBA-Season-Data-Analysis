@@ -4,6 +4,15 @@ Exploring Scipy for NBA Analysis
 # Project Overview 
 This project analyzes NBA player statistics, focusing on three-point accuracy across multiple seasons. It utilizes data from the players_stats_by_season_full_details.csv file, and performs various analyses such as determining the player with the most regular seasons, calculating three-point accuracy for each season, performing linear regression, and more. The results are printed either to a file or displayed in the terminal, based on user preference. Important: Please note that if you choose to print to a file, the code will not finish running until you close the linear regression graph.
 
+
+# Files 
+- 3p_accuracy_plot.png example graph
+- output.txt example output
+- players_stats_by_season_full_details.csv file from kaggle heres the link to learn more about the csv file https://www.kaggle.com/datasets/jacobbaruch/basketball-players-stats-per-season-49-leagues
+- NBA Copilot chat - documented help from copilot
+- ScipyAssignment -python code contain analysis  
+
+
 # Design 
 1)  Data loading and Filtering 
 - Data set is loaded into pandas dataframe
