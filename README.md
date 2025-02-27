@@ -22,7 +22,7 @@ This project analyzes NBA player statistics, focusing on three-point accuracy ac
 - plot ()
 - print_output()
 
-#Limitations 
+# Limitations 
 - Its dependent on the user
 - The user is required to make a choice whether to print the results in the terminal or a file
 - The script will keep promting the user to make a decision till its made vaild 
