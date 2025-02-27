@@ -14,11 +14,11 @@ This project analyzes NBA player statistics, focusing on three-point accuracy ac
 - ScipyAssignment - empty file  
 
 # Librarys
--pandas as pd 
--numpy as np
--os module 
--scipy import stats, integrate, optimize 
--matplotlib.pyplot as plt 
+- pandas as pd 
+- numpy as np
+- os module 
+- scipy import stats, integrate, optimize 
+- matplotlib.pyplot as plt 
 
 
 # Code Explanation
