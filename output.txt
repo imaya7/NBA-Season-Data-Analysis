@@ -1,0 +1,70 @@
+
+1. Player with most regular seasons: Vince Carter
+
+2. 3-Point Accuracy by Season:
+     Season  year  3pAccuracy
+1999 - 2000  1999    0.402542
+2000 - 2001  2000    0.408060
+2001 - 2002  2001    0.386581
+2003 - 2004  2003    0.382716
+2004 - 2005  2004    0.405751
+2005 - 2006  2005    0.340599
+2006 - 2007  2006    0.356979
+2007 - 2008  2007    0.358974
+2008 - 2009  2008    0.385204
+2009 - 2010  2009    0.367284
+2010 - 2011  2010    0.361371
+2011 - 2012  2011    0.360976
+2012 - 2013  2012    0.406015
+2013 - 2014  2013    0.393531
+2014 - 2015  2014    0.297414
+2016 - 2017  2016    0.378378
+2017 - 2018  2017    0.345455
+2018 - 2019  2018    0.389241
+2019 - 2020  2019    0.301980
+
+3. Linear Regression Analysis:
+Line of Best Fit Equation: 3P Accuracy = -0.002517415691 × Year + 5.427570734057
+R-squared: 0.233860557159
+
+4. Average 3P Accuracy Analysis:
+Average predicted 3P accuracy (from numerical integration): 0.370082610183
+Average predicted 3P accuracy (from analytical integration): 0.370082610183
+Actual average 3P accuracy: 0.369950114620
+Difference (numerical vs actual): 0.000132495563
+Difference (analytical vs actual): 0.000132495563
+
+5. Interpolated 3P accuracy for missing seasons:
+Season 2002-2003: 0.387704520022 (Using model.predict)
+Season 2002-2003: 0.387704520022 (Using line equation directly)
+Season 2015-2016: 0.354978116035 (Using model.predict)
+Season 2015-2016: 0.354978116035 (Using line equation directly)
+
+6. Statistical Analysis:
+ Statistical measures for FGM and FGA columns:
+                    FGM            FGA
+Statistic                             
+mean         445.263158    1024.736842
+var        55558.093567  249961.538012
+skew          -0.090658      -0.159086
+kurtosis      -1.497986      -1.572262
+
+Comparison of FGM and FGA statistics:
+Mean difference: -579.473684210526
+Variance difference: -194403.444444444409
+Skewness difference: 0.068428523583
+Kurtosis difference: 0.074276375198
+
+7. T-test Analysis:
+Relational t-test (FGM vs FGA): t-statistic = -9.514230724813, p-value = 0.000000019111
+FGM individual t-test: t-statistic = 8.234171252939, p-value = 0.000000162104
+FGA individual t-test: t-statistic = 8.934135952620, p-value = 0.000000049125
+
+In-depth Comparison of T-test Results:
+The relational t-test compares the means of the FGM and FGA columns directly, taking into account the paired nature of the data.
+The individual t-tests compare each column against a hypothesized mean of 0, without considering the relationship between the columns.
+Relational t-test p-value: 0.000000019111
+FGM individual t-test p-value: 0.000000162104
+FGA individual t-test p-value: 0.000000049125
+A lower p-value in the relational t-test indicates a significant difference between the FGM and FGA columns,
+while the individual t-tests indicate whether each column's mean is significantly different from 0.
