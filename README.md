@@ -1,9 +1,13 @@
 # NBA-Season-Data-Analysis
-Exploring Scipy Python library for NBA Analysis
+Exploring SciPy Python library for NBA Analysis
 
 # Project Overview 
-This project analyzes NBA player statistics, focusing on three-point accuracy across multiple seasons. It utilizes data from the players_stats_by_season_full_details.csv file and performs various analyses such as determining the player with the most regular seasons, calculating three-point accuracy for each season, performing linear regression, and more. The results are printed either to a file or displayed in the terminal, based on user preference. Important: Please note that if you choose to print to a file, the code will not finish running until you close the linear regression graph.
-
+This project analyzes NBA player statistics, focusing on three-point accuracy across multiple seasons. It utilizes data from the players_stats_by_season_full_details.csv file and performs various analyses such as determining the player with the most regular seasons, calculating three-point accuracy for each season, performing linear regression, and more. The results are printed either to a file or displayed in the terminal, based on user preference. 
+# Important 
+- Please note that if you choose to print to a file, the code will not finish running until you close the linear regression graph, please close the graph and then open the file again
+- The code uses part of SciPy that will be removed in the the 1.14.0 version of SciPy
+(DeprecationWarning: 'scipy.integrate.trapz' is deprecated in favour of 'scipy.integrate.trapezoid' and will be removed in SciPy 1.14.0
+  averagePredictedAccuracy = integrate.trapz(predictedAccuracies, seasonsRange) / (lastSeason - firstSeason))
 
 # Files 
 - 3p_accuracy_plot.png example graph
