@@ -11,10 +11,10 @@ try:
     # Load the dataset
     df = pd.read_csv(filePath)
 
-    # 1. Filter for NBA regular season data
+    # 0. Filter for NBA regular season data
     nbaRegularSeason = df[(df['League'] == 'NBA') & (df['Stage'] == 'Regular_Season')]
 
-    # 2. Determine the player who has played the most regular seasons
+    # 1. Determine the player who has played the most regular seasons
     playerSeasons = nbaRegularSeason.groupby('Player')['Season'].nunique()
     mostSeasonsPlayer = playerSeasons.idxmax()
 
@@ -40,7 +40,7 @@ try:
     # Filter data for this player
     playerData = nbaRegularSeason[nbaRegularSeason['Player'] == mostSeasonsPlayer].copy()
 
-    # 3. Calculate three-point accuracy for each season
+    # 2. Calculate three-point accuracy for each season
     playerData.loc[:, '3pAccuracy'] = playerData['3PM'] / playerData['3PA']
 
     # Extract year from Season for proper ordering and analysis
@@ -54,7 +54,7 @@ try:
     seasonAccuracy = playerData[['Season', 'year', '3pAccuracy']].sort_values('year')
     printOutput(seasonAccuracy.to_string(index=False))
 
-    # 4. Perform linear regression for three-point accuracy across the years played
+    # 3. Perform linear regression for three-point accuracy across the years played
     X = playerData['year'].values
     y = playerData['3pAccuracy'].fillna(0).values
 
@@ -78,7 +78,7 @@ try:
     # Add predicted values to dataframe
     playerData.loc[:, '3pAccuracyPred'] = linear_model(X, slope, intercept)
 
-    # 5. Calculate the average three-point accuracy by integrating the fit line
+    # 4. Calculate the average three-point accuracy by integrating the fit line
     firstSeason = playerData['year'].min()
     lastSeason = playerData['year'].max()
     seasonsRange = np.arange(firstSeason, lastSeason + 1)
@@ -100,7 +100,7 @@ try:
     printOutput(f"Difference (numerical vs actual): {abs(averagePredictedAccuracy - actualAverageAccuracy):.12f}")
     printOutput(f"Difference (analytical vs actual): {abs(analyticalAverage - actualAverageAccuracy):.12f}")
 
-    # 6. Interpolate missing values for 2002-2003 and 2015-2016 seasons
+    # 5. Interpolate missing values for 2002-2003 and 2015-2016 seasons
     missingSeasons = [2002, 2015]
     interpolatedValues = linear_model(np.array(missingSeasons), slope, intercept)
 
@@ -111,7 +111,7 @@ try:
         printOutput(f"Season {season}-{season+1}: {value:.12f} (Using model.predict)")
         printOutput(f"Season {season}-{season+1}: {directInterpolation:.12f} (Using line equation directly)")
 
-    # 7. Statistical analysis
+    # 6. Statistical analysis
     printOutput("\n6. Statistical Analysis:")
     printOutput(" Statistical measures for FGM and FGA columns:")
 
@@ -135,7 +135,7 @@ try:
     printOutput(f"Skewness difference: {fgmStats['skew'] - fgaStats['skew']:.12f}")
     printOutput(f"Kurtosis difference: {fgmStats['kurtosis'] - fgaStats['kurtosis']:.12f}")
 
-    # 7.2 Perform t-tests
+    # 7 Perform t-tests
     printOutput("\n7. T-test Analysis:")
 
     # Perform relational t-test on FGM and FGA columns
